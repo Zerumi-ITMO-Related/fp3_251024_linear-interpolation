@@ -3,7 +3,7 @@ module LibEval
   )
 where
 
-import LibInterpolation
+import LibInterpolation hiding (step, window)
 import LibPoint
 import LibSlidingWindow (addElement)
 
