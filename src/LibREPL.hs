@@ -20,12 +20,13 @@ read_ =
     >> getLine
 
 -- | Evaluate the input
-eval_ :: String -> Interpolation -> (Interpolation, String)
+eval_ :: String -> Interpolation -> (Interpolation, Maybe String)
 eval_ = evalPoint
 
 -- | Print the result
-print_ :: String -> IO ()
-print_ = putStrLn
+print_ :: Maybe String -> IO ()
+print_ Nothing = return ()
+print_ (Just str) = putStrLn str
 
 -- | Loop the read-eval-print cycle
 loop_ :: [Interpolation] -> IO ()
