@@ -7,8 +7,7 @@ module LibInterpolation
 where
 
 import LibSlidingWindow
-
-type Point = (Double, Double)
+import LibPoint
 
 data Interpolation = Interpolation
   { window :: SlidingWindow Point,
