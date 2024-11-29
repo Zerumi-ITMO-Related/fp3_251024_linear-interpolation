@@ -3,12 +3,15 @@ module LibEval
   )
 where
 
-import LibInterpolation hiding (step, window)
+import LibInterpolation hiding (name, step, window)
 import LibPoint
 import LibSlidingWindow (addElement)
 
 evalPoint :: String -> Interpolation -> (Interpolation, Maybe String)
-evalPoint str (Interpolation window intFunc step) = (Interpolation newWindow intFunc step, showPoints (intFunc newWindow))
-  where
-    point = mapPoint str
-    newWindow = addElement point window
+evalPoint str (Interpolation name window intFunc step) = (Interpolation name newWindow intFunc step, result)
+    where
+        point = mapPoint str
+        newWindow = addElement point window
+        result = case showPoints (intFunc newWindow) of
+            Just s  -> Just (name ++ " interpolation: \n" ++ s)
+            Nothing -> Nothing

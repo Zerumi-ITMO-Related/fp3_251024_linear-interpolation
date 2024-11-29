@@ -10,7 +10,9 @@ import LibPoint
 import LibSlidingWindow
 
 data Interpolation = Interpolation
-  { window :: SlidingWindow Point,
+  {
+    name :: String,
+    window :: SlidingWindow Point,
     func :: SlidingWindow Point -> Maybe [Point],
     step :: Double
   }
@@ -21,7 +23,7 @@ generateSequence x stepSize threshold =
 
 -- Linear interpolation function
 linearInterpolation :: Interpolation
-linearInterpolation = Interpolation (newSlidingWindow 2) (linearInterpolationFunc 1.0) 1.0
+linearInterpolation = Interpolation "Linear" (newSlidingWindow 2) (linearInterpolationFunc 1.0) 1.0
 
 linearInterpolationFunc :: Double -> SlidingWindow Point -> Maybe [Point]
 linearInterpolationFunc stepSize sw =
@@ -31,7 +33,7 @@ linearInterpolationFunc stepSize sw =
 
 -- Lagrange interpolation function
 lagrangeInterpolation :: Interpolation
-lagrangeInterpolation = Interpolation (newSlidingWindow 4) (lagrangeInterpolationFunc 1.0) 1.0
+lagrangeInterpolation = Interpolation "Lagrange (4)" (newSlidingWindow 4) (lagrangeInterpolationFunc 1.0) 1.0
 
 lagrangeInterpolationFunc :: Double -> SlidingWindow Point -> Maybe [Point]
 lagrangeInterpolationFunc stepSize sw =
