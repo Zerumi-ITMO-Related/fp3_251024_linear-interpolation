@@ -2,6 +2,7 @@ module Main (main) where
 
 import LibREPL
 import LibSlidingWindow (newSlidingWindow)
+import LibInterpolation (linearInterpolation)
 
 -- | Welcome message
 welcomeInvite :: IO ()
@@ -12,4 +13,4 @@ welcomeInvite =
 
 -- Main function to read input lazily, parse it, and print the integers
 main :: IO ()
-main = welcomeInvite >> loop_ (newSlidingWindow 5)
+main = welcomeInvite >> loop_ [linearInterpolation]

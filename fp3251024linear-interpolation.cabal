@@ -25,9 +25,8 @@ source-repository head
 
 library
   exposed-modules:
-      LibApprox
       LibEval
-      LibIO
+      LibInterpolation
       LibPoint
       LibREPL
       LibSlidingWindow

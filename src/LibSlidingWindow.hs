@@ -1,9 +1,10 @@
-module LibSlidingWindow(
-    SlidingWindow,
+module LibSlidingWindow
+  ( SlidingWindow,
     newSlidingWindow,
     addElement,
-    getElements
-) where
+    getElements,
+  )
+where
 
 data SlidingWindow a = SlidingWindow Int [Maybe a] deriving (Show, Eq)
 
