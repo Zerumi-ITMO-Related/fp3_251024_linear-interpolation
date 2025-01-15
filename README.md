@@ -28,3 +28,10 @@ Implemented algorithms:
 - Lagrange (4) and Linear Interpolation: [here](src/LibInterpolation.hs)
 - Sliding window: [here](src/LibSlidingWindow.hs)
 - REPL: [here](src/LibREPL.hs)
+
+## Example
+
+For sin(x) function:
+
+<img width="1440" alt="image" src="https://github.com/user-attachments/assets/43a26768-57a6-46cd-9e86-298113f83235" />
+
