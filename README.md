@@ -4,7 +4,7 @@ Functional programming lab #3, implementing function Interpolation
 
 ---
 
-What is this?
+## What is this?
 
 This project is a functional programming practice for implementation function interpolation. Application represents REPL, where user adds some initial points, and as the execution progresses algorithms interpolate this function. Each algorithm has a sliding window with the latest points. Here's conceptual overview of sliding window work:
 
